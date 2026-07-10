@@ -7,6 +7,9 @@ XGBoost, a decision-tree model is trained on player stats and predicts the break
 
 Important note: Rookies are excluded from this model as it uses prior trajectory data to inform the predictions
 
+<img width="662" height="413" alt="image" src="https://github.com/user-attachments/assets/8b1bc456-622c-4094-9e77-ad6af8717032" />
+
+
 ## Data
 nba_api's base stats, advanced stats, and draft year + position stats for players. A row of data indicates a specific player's stats accross a given year. 
 Players with exceptionally low playing time(less than 20 games or >10 minutes per game) are filtered out, along with rookies and players over 35
@@ -53,7 +56,7 @@ season from past data, and avoids leaking future information into training.
 ### Modeling
 Two models were evaluated:
 
-- **Linear Regression** (baseline) — MAE: 0.54, R²: 0.02
+- **Linear Regression** (baseline) — MAE: 0.54, R²: -0.015
 - **XGBoost** (primary model) — MAE: 0.52, R²: 0.03
 
 XGBoost outperforms the linear baseline by learning non-linear relationships 
